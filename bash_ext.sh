@@ -5,14 +5,8 @@ historyg(){
   history | grep "$1"
 }
 
-alias git='LANG=en_GB git'
-
 gcu(){
   git cu
-}
-
-tunnel-diminished(){
-  ssh -L8000:127.0.0.1:8000 -N -v diminished.intranet.chordify.net
 }
 
 gu() {
@@ -23,4 +17,20 @@ glogg() {
   git logg
 }
 
+gss() {
+  git ss
+}
+
 alias vi=vim
+
+thm-start() {
+  sudo openvpn /opt/tryhackme_smascaro_eu1.ovpn &
+}
+
+thm-stop() {
+  sudo killall openvpn
+}
+
+activate() {
+  source ./venv/bin/activate
+}

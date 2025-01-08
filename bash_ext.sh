@@ -1,11 +1,10 @@
-export ANDROID_KEYSTORE_PROPERTIES_FILE_PATH='/Users/sergi/chordify/keystores/android-app/keystore.properties'
-launchctl setenv ANDROID_KEYSTORE_PROPERTIES_FILE $ANDROID_KEYSTORE_PROPERTIES_FILE_PATH
-
-historyg(){
+historyg() {
   history | grep "$1"
 }
 
-gcu(){
+# Make sure to run git_aliases.sh so the following git aliases are found
+
+gcu() {
   git cu
 }
 
@@ -23,14 +22,17 @@ gss() {
 
 alias vi=vim
 
+# Start THM's OpenVPN
 thm-start() {
   sudo openvpn /opt/tryhackme_smascaro_eu1.ovpn &
 }
 
+# Stop THM's OpenVPN session
 thm-stop() {
   sudo killall openvpn
 }
 
+# Activate a Python environment in the current directory
 activate() {
   source ./venv/bin/activate
 }
